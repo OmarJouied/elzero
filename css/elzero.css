@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root {
+    --p-r: 4rem;
+    --hei: 5rem;
+    --main-clr: #2196f3;
+    --bac-clr: #ececec;
+    --p: #666;
+}
+body {
+    scroll-behavior: smooth;
+    font-family: "Cairo", sans-serif;
+}
+.container {
+    padding: 0 var(--p-r);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* landing */
+.landing header {
+    box-shadow: 0 0 .8rem 0 #ccc;
+    position: relative;
+}
+.landing ul {
+    display: flex;
+}
+.landing a {
+    height: var(--hei);
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #000;
+}
+.landing .container > a {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--main-clr);
+}
+.landing li a {
+    position: relative;
+    padding: 0 2rem;
+}
+.landing li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: .25rem;
+    background-color: var(--main-clr);
+    transition-duration: .3s;
+}
+.landing li a:hover {
+    background-color: #fafafa;
+    color: var(--main-clr);
+}
+.landing li a:hover::before {
+    width: 100%;
+}
+/* landing */
+/* main */
+main {
+    height: calc(100vh - var(--hei));
+    background-image: linear-gradient(174deg, var(--bac-clr) 72%, #fff 72%);
+}
+.hello {
+    margin-top: -8rem;
+    width: 34rem;
+    line-height: 1.6;
+}
+.hello h1 {
+    margin: 0;
+    letter-spacing: -.1rem;
+    font-size: 2.5rem;
+}
+.hello p {
+    color: var(--p);
+    font-size: 1.5rem;
+}
+.landing main > a {
+    position: absolute;
+    left: 50%;
+    bottom: 3rem;
+    transform: translate(-50%, 0);
+    height: 0;
+    animation: move 1.5s infinite;
+}
+i {
+    font-size: 2rem;
+    color: var(--main-clr);
+}
+.img {
+    width: 50%;
+    animation: up-down 1.5s alternate infinite;
+}
+.img img {
+    width: 100%;
+}
+/* main */
+/* animation */
+@keyframes move {
+    20%,
+    80% {
+        transform: translate(-50%, -1rem);
+    }
+    40%,
+    60%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+}
+@keyframes up-down {
+    to {
+        transform: translateY(-5rem);
+    }
+}
+/* animation */
