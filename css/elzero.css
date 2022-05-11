@@ -7,10 +7,23 @@
 }
 :root {
     --p-r: 4rem;
-    --hei: 5rem;
+    --hei: 4.65rem;
     --main-clr: #2196f3;
     --bac-clr: #ececec;
+    --li-bac: #fafafa;
     --p: #666;
+    --border: .25rem;
+    --trans: .3s
+}
+@media (max-width: 767px) {
+    :root {
+        --hei: 3rem;
+    }
+}
+@media (max-width: 575px) {
+    :root {
+        --p-r: 1rem
+    }
 }
 body {
     scroll-behavior: smooth;
@@ -34,6 +47,11 @@ a {
     box-shadow: 0 0 .8rem 0 #ccc;
     position: relative;
 }
+@media (max-width: 767px) {
+    .landing header {
+        flex-direction: column;
+    }
+}
 .landing ul {
     display: flex;
 }
@@ -44,8 +62,13 @@ a {
     align-items: center;
     text-transform: capitalize;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #000;
+}
+@media (max-width: 767px) {
+    .landing a {
+        font-size: .8rem;
+    }
 }
 .landing .container > a {
     font-weight: 700;
@@ -54,7 +77,12 @@ a {
 }
 .landing li a {
     position: relative;
-    padding: 0 2rem;
+    padding: 0 1.9rem;
+}
+@media (max-width: 575px) {
+    .landing li a {
+        padding: 0 1rem;
+    }
 }
 .landing li a::before {
     content: "";
@@ -62,36 +90,128 @@ a {
     top: 0;
     left: 0;
     width: 0;
-    height: .25rem;
+    height: var(--border);
     background-color: var(--main-clr);
-    transition-duration: .3s;
+    transition-duration: var(--trans);
 }
 .landing li a:hover {
-    background-color: #fafafa;
+    background-color: var(--li-bac);
     color: var(--main-clr);
 }
 .landing li a:hover::before {
     width: 100%;
 }
+.landing .more {
+    border-top: .125rem solid var(--bac-clr);
+    border-bottom: var(--border) solid var(--main-clr);
+    width: calc(100% - 2 * var(--p-r));
+    background-color: #fff;
+    position: absolute;
+    height: 22rem;
+    left: var(--p-r);
+    display: flex;
+    padding: 1rem 0;
+    padding-top: 1.5rem;
+    justify-content: space-between;
+    opacity: 0;
+    z-index: -1;
+    top: 160%;
+    transition: top var(--trans), opacity var(--trans);
+}
+@media (max-width: 767px) {
+    .landing .more {
+        width: 100%;
+        left: 0;
+        height: unset;
+        padding: 0;
+    }
+}
+.landing li.master:hover .more {
+    opacity: 1;
+    z-index: 2;
+    top: 100%;
+}
+.landing .more .img {
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 767px) {
+    .landing .more .img {
+        display: none;
+    }
+}
+.landing .more img {
+    width: 30rem;
+    margin-left: calc(.5 * var(--p-r));
+}
+.landing .more ul {
+    width: 35rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+}
+@media (max-width: 767px) {
+    .landing .more ul {
+        flex-wrap: nowrap;
+        align-items: center;
+        flex: 1;
+        padding: .5rem;
+        padding-bottom: 0;
+    }
+}
+@media (max-width: 575px) {
+    
+}
+.landing .more li a {
+    width: 15rem;
+    color: var(--main-clr);
+    font-weight: 700;
+    font-size: 1.1rem;
+    height: unset;
+    padding: calc(.1 * var(--p-r)) calc(.2 * var(--p-r));
+    padding-left: 0;
+    border-bottom: .085rem solid var(--bac-clr);
+}
+@media (max-width: 767px) {
+    .landing .more li,
+    .landing .more li a {
+        width: 100%;
+    }
+}
+.landing .more li a::before {
+    height: 100%;
+    background-color: var(--li-bac);
+    z-index: -1;
+}
+.landing li a:hover {
+    background-color: unset;
+}
+.landing .more li a i {
+    display: inline-block;
+    font-size: 1rem;
+    margin: .8rem;
+}
 /* landing */
 /* main */
 main {
+    position: relative;
     height: calc(100vh - var(--hei));
+    max-height: calc(100vh - var(--hei));
     background-image: linear-gradient(174deg, var(--bac-clr) 72%, #fff 72%);
 }
 .hello {
     margin-top: -8rem;
-    width: 34rem;
+    width: 32rem;
     line-height: 1.6;
 }
 .hello h1 {
     margin: 0;
-    letter-spacing: -.1rem;
+    letter-spacing: -.13rem;
     font-size: 2.5rem;
 }
 .hello p {
     color: var(--p);
-    font-size: 1.5rem;
+    font-size: 1.45rem;
 }
 .landing main > a {
     position: absolute;
@@ -99,13 +219,14 @@ main {
     bottom: 3rem;
     transform: translate(-50%, 0);
     height: 0;
-    animation: move 1.5s infinite;
+    animation: move 1.2s infinite;
 }
 i {
     font-size: 2rem;
     color: var(--main-clr);
 }
-.img {
+main .img {
+    margin-bottom: 1rem;
     width: 50%;
     animation: up-down 1.5s alternate infinite;
 }
@@ -127,7 +248,7 @@ i {
 }
 @keyframes up-down {
     to {
-        transform: translateY(-5rem);
+        transform: translateY(-3rem);
     }
 }
 /* animation */
