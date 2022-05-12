@@ -28,6 +28,7 @@
 body {
     scroll-behavior: smooth;
     font-family: "Cairo", sans-serif;
+    /* height: 300vh; */
 }
 .container {
     padding: 0 var(--p-r);
@@ -194,24 +195,44 @@ a {
 /* landing */
 /* main */
 main {
-    position: relative;
     height: calc(100vh - var(--hei));
     max-height: calc(100vh - var(--hei));
     background-image: linear-gradient(174deg, var(--bac-clr) 72%, #fff 72%);
+}
+@media (max-width: 767px) {
+    main.container {
+        justify-content: center;
+        background-image: linear-gradient(174deg, var(--bac-clr) 77%, #fff 77%);
+    }
 }
 .hello {
     margin-top: -8rem;
     width: 32rem;
     line-height: 1.6;
 }
+@media (max-width: 767px) {
+    .hello {
+        text-align: center;
+    }
+}
 .hello h1 {
     margin: 0;
     letter-spacing: -.13rem;
     font-size: 2.5rem;
 }
+@media (max-width: 767px) {
+    .hello h1 {
+        font-size: 1.75rem;
+    }
+}
 .hello p {
     color: var(--p);
     font-size: 1.45rem;
+}
+@media (max-width: 767px) {
+    .hello p {
+        font-size: 1.15rem;
+    }
 }
 .landing main > a {
     position: absolute;
@@ -221,6 +242,16 @@ main {
     height: 0;
     animation: move 1.2s infinite;
 }
+@media (max-width: 767px) {
+    .landing main > a {
+        bottom: 1.5rem;
+    }
+}
+@media (max-width: 575px) {
+    .landing main > a {
+        bottom: 5rem;
+    }
+}
 i {
     font-size: 2rem;
     color: var(--main-clr);
@@ -229,6 +260,11 @@ main .img {
     margin-bottom: 1rem;
     width: 50%;
     animation: up-down 1.5s alternate infinite;
+}
+@media (max-width: 767px) {
+    main .img {
+        display: none;
+    }
 }
 .img img {
     width: 100%;
