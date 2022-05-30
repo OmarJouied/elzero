@@ -1014,7 +1014,7 @@ footer .container {
     left: 0;
     width: 100%;
     height: 100%!important;
-    background-color: rgb(255 255 255 / 80%);
+    background-color: rgb(255 255 255 / 90%);
     background-image: none!important;
     z-index: -1;
 }
@@ -1196,6 +1196,9 @@ footer ul li:last-child {
 }
 footer ul li:hover {
     padding-left: .7rem;
+}
+footer ul li:hover a {
+    color: #fff;
 }
 footer ul a {
     color: #b9b9b9;
