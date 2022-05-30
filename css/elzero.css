@@ -382,14 +382,14 @@ footer .container {
 .features .item:hover .img::after {
     clip-path: polygon(0 100%, 0 0, 100% 100%, 0 100%);
 }
-.features h2 {
+.features .item h2 {
     font-size: 2.5rem;
     margin: 0 auto;
     padding: 1.4rem;
     position: relative;
     width: fit-content;
 }
-.features h2::before {
+.features .item h2::before {
     content: "";
     position: absolute;
     display: block;
