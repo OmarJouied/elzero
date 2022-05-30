@@ -46,7 +46,7 @@ a {
     letter-spacing: .05rem;
     border: .2rem solid #000;
     position: relative;
-    --out: -15%;
+    --out: -1.8rem;
 }
 .main-title::before,
 .main-title::after {
@@ -314,7 +314,10 @@ footer .container {
 }
 /* articles */
 /* Gallery */
-.gallery main {
+.gallery main,
+.features main,
+.testimonials main,
+.services main {
     grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
 }
 .gallery .item {
@@ -348,9 +351,6 @@ footer .container {
 }
 /* Gallery */
 /* Features */
-.features main {
-    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
-}
 .features .item {
     border: .01rem solid #ccc;
     text-align: center;
@@ -437,18 +437,15 @@ footer .container {
 }
 /* Features */
 /* testimonials */
-.testimonials main {
-    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
-}
 .testimonials .item {
     background-color: #fff;
     position: relative;
     box-shadow: 0 0 .2rem #bbb;
     border-radius: .35rem;
-    padding: calc(.3 * var(--p-r));
+    padding: var(--p-r);
 }
 .testimonials .item > * {
-    margin-bottom: calc(.15 * var(--p-r));
+    margin-bottom: calc(.5 * var(--p-r));
 }
 .testimonials .item img {
     --w: 5.5rem;
@@ -531,7 +528,7 @@ footer .container {
 }
 .team .item i {
     font-size: 1rem;
-    margin: calc(.5 * var(--m)) var(--m);
+    margin: calc(.5 * var(--m)) 0;
     color: var(--p);
 }
 .team .item a:hover i {
@@ -550,9 +547,6 @@ footer .container {
 }
 /* team */
 /* services */
-.services main {
-    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
-}
 .services .item {
     box-shadow: 0 0 .5rem 0 #aaa;
     background-color: #fff;
